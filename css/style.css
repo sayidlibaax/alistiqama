@@ -1,0 +1,127 @@
+/* Global layout and typography */
+:root{
+    --brand:#003366;
+    --accent:#f2a900;
+    --muted:#f4f4f4;
+    --max-width:1100px;
+}
+*{box-sizing:border-box}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    background:var(--muted);
+    color:#222;
+}
+.site-header, footer{
+    background:var(--brand);
+    color:#fff;
+    text-align:center;
+}
+.site-header{
+    padding:20px 10px;
+}
+nav.site-nav{
+    background:#ffffff;
+    border-bottom:4px solid rgba(0,0,0,0.08);
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:20;
+}
+.site-nav .nav-inner{
+    max-width:var(--max-width);
+    margin:0 auto;
+    padding:10px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+}
+.site-nav .brand{
+    display:inline-flex;
+    align-items:center;
+    text-decoration:none;
+}
+.brand-logo{
+    font-size:1.15rem;
+    font-weight:800;
+    color:var(--brand);
+}
+.nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+.nav-links a{
+    color:var(--brand);
+    text-decoration:none;
+    font-weight:700;
+    padding:8px 14px;
+    border-radius:4px;
+}
+.nav-links a:hover,
+.nav-links a.active{
+    background:var(--brand);
+    color:#fff;
+}
+
+.container{
+    max-width:var(--max-width);
+    margin:24px auto;
+    padding:0 16px 40px;
+}
+
+/* Home two-column layout using flex */
+.home .columns{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    margin-top:20px;
+}
+.home .left-column,
+.home .right-column{
+    background:#fff;
+    padding:22px;
+    border-radius:6px;
+    box-shadow:0 1px 4px rgba(0,0,0,0.06);
+}
+.home .left-column{flex:1 1 55%;min-width:280px}
+.home .right-column{flex:1 1 40%;min-width:260px}
+.home h2{margin-top:0}
+.home ul{padding-left:20px;margin:0 0 16px}
+
+/* Team page: float, clear, overflow demonstration */
+.team-box{background:#fff;padding:16px;border-radius:6px;overflow:auto}
+.member{float:left;width:48%;margin:1%;background:#fafafa;padding:12px;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,0.06);overflow:hidden}
+.member img{display:block;width:100%;height:370px;object-fit:cover;border-radius:4px}
+.member h3{margin:8px 0 6px}
+.member p{margin:0}
+.team-clear{clear:both}
+
+/* Forms used by registration and contact */
+.form-container{background:#fff;padding:20px;border-radius:6px;max-width:760px;margin:0 auto}
+label{display:block;margin:10px 0 6px;font-weight:600}
+input[type="text"],input[type="email"],input[type="tel"],input[type="password"],select,textarea{
+    width:100%;padding:10px;border:1px solid #ddd;border-radius:4px;font-size:15px
+}
+.form-row{display:flex;gap:12px}
+.form-row .col{flex:1}
+.small-control{width:auto;display:inline-block;margin-right:8px}
+.form-actions{margin-top:14px;display:flex;gap:10px}
+input[type="submit"],input[type="reset"]{background:var(--brand);color:#fff;padding:10px 16px;border:none;border-radius:4px;cursor:pointer}
+input[type="reset"]{background:#666}
+
+/* Footer */
+footer{padding:18px 10px;margin-top:28px}
+footer .footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;gap:16px;align-items:center}
+footer p{margin:0}
+
+/* Responsive */
+@media (max-width:800px){
+    .site-nav .nav-inner{flex-direction:column;align-items:center}
+    .nav-links{justify-content:center}
+    .member{width:100%;float:none;margin-bottom:12px}
+    .home .columns{flex-direction:column}
+    .form-container{padding:16px}
+}
